@@ -107,15 +107,15 @@ function thumb($path, $width = 200, $height = null, $suffix = '_s') {
 
 function capp(int $width = 200, int $height = 100) {
 	global $image;
-	$image = imagecreatetruecolor($width, $height);
+	$image    = imagecreatetruecolor($width, $height);
 	$fontsize = $width / 5;
-	$size1 = mt_rand((int)$fontsize * 0.5, $fontsize);
-	$size2 = mt_rand((int)$fontsize * 0.5, $fontsize);
-	$size3 = mt_rand((int)$fontsize * 0.5, $fontsize);
-	$size4 = mt_rand((int)$fontsize * 0.5, $fontsize);
-	$color = color();
+	$size1    = mt_rand((int)$fontsize * 0.5, $fontsize);
+	$size2    = mt_rand((int)$fontsize * 0.5, $fontsize);
+	$size3    = mt_rand((int)$fontsize * 0.5, $fontsize);
+	$size4    = mt_rand((int)$fontsize * 0.5, $fontsize);
+	$color    = color();
 	$fontfile = $_SERVER['DOCUMENT_ROOT'] . '/xm/font/msyh.ttf';
-	$chars = array(get_char(), get_char(), get_char(), get_char());
+	$chars    = array(get_char(), get_char(), get_char(), get_char());
 
 	$pt1 = 5;
 	$pt2 = $pt1 + $width / 20 + $fontsize;
@@ -160,11 +160,11 @@ function cap($length = 4, $width = 100, $height = 50) {
 	session_start();
 	global $image;
 	require_once $_SERVER['DOCUMENT_ROOT'] . 'xm/inc/fun.php';
-	$image = imagecreatetruecolor($width, $height);
-	$size = $width / 5;
-	$color = color();
+	$image    = imagecreatetruecolor($width, $height);
+	$size     = $width / 5;
+	$color    = color();
 	$fontfile = $_SERVER['DOCUMENT_ROOT'] . '/xm/font/msyh.ttf';
-	$cap = '';
+	$cap      = '';
 	for ($i = 0; $i < $length; $i++) {
 		$angle = mt_rand(-40, 40);
 		$x = $size / 5 + $i * $size;
@@ -573,7 +573,7 @@ function mark_text($path, $text, $size = 'auto', $position = 1, $color = 'red') 
 
 
 //随机验证码，位置不好，不想调了，太费时间。用循环简化代码。需另加字体文件。
-function cap(int $width = 200, int $height = 100) {
+function cap2(int $width = 200, int $height = 100) {
 	$image = imagecreatetruecolor($width, $height);
 
 	for ($i = 0; $i < 50; $i++) {
